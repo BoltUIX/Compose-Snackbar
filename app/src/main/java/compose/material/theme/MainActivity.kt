@@ -1,7 +1,6 @@
 package compose.material.theme
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
@@ -60,28 +59,18 @@ class MainActivity : ComponentActivity() {
                             }) { Text("Snackbar",style = MaterialTheme.typography.labelLarge) }
                             ListDividerPadding()
 
-
-                             Text("Toast", Modifier.padding(bottom = 10.dp), style = MaterialTheme.typography.labelLarge)
-                             Button(onClick = {
-                                 Toast.makeText(
-                                     context,
-                                     "Hi i am toast message",
-                                     Toast.LENGTH_LONG
-                                 ).show()
-                             }) { Text("Toast",style = MaterialTheme.typography.labelLarge) }
-
-
                         }
                     }
                 )
 
+
                 Box(modifier = Modifier.fillMaxSize(), Alignment.BottomCenter){
 
-                    /*  SnackbarHost(hostState = snackState)*/
+                   //  SnackbarHost(hostState = snackState)
 
                     // to change color
                     SnackbarHost(hostState = snackState) {
-                        Snackbar(
+                       Snackbar(
                             snackbarData = it,
                             containerColor = MaterialTheme.colorScheme.primary,
                             contentColor = MaterialTheme.colorScheme.onPrimary
